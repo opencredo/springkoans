@@ -11,7 +11,7 @@ Getting Started
 To start your journey through the Spring Koans:
 
 * Do a git clone to checkout the code, or download and unpack a tar.gz or .zip from [GitHub](http://github.com/opencredo/springkoans)
-* Change directory into the springkoans directory
+* Change directory into the springkoans/programmingspring directory
 * Run "mvn clean test" from the command line (having installed [Maven](http://maven.apache.org/) first of course)
 * You should then get an output like the following, which gives you some pointers on the first problem to contemplate and fix in the code:
 
