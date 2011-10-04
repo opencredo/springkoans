@@ -38,7 +38,7 @@ Contributors
 The Spring Koans contributors to date include:
 
 * Russ Miles (CEO of [OpenCredo](http://www.opencredo.com) and Author on [Programming Spring](http://shop.oreilly.com/product/0636920018056.do))
-* Michal Bachman (Consultant at OpenCredo)
+* Michal Bachman (Consultant at [OpenCredo](http://www.opencredo.com))
 
 Contributing
 ------------
