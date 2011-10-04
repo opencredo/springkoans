@@ -1,8 +1,28 @@
 Spring Koans
 ============
 
-This project provides a number of Koans TBD...
+These Koans walk you along the path to enlightenment in order to learn Spring. The goal is to learn the Spring Framework's features gradually and engaging your brain as much as possible. At the heart of Spring's usage is effective support for Unit (by Spring getting out of the way) and integration (using Spring's Testing support) testing and so it was natural to provide these koans as a series of failing tests that you learn how to fix as you take a learning journey through the Spring Framework.
 
+With a huge nod to the [EdgeCase Ruby Koans](http://rubykoans.com/) for the inspiration for this project.
+
+Getting Started
+---------------
+
+To start your journey through the Spring Koans:
+
+* Do a git clone to checkout the code, or download a tar.gz or .zip from [GitHub](http://github.com/opencredo/springkoans)
+
+* TBD...
+
+Of course it also helps to have a copy of [Programming Spring from O'Reilly](http://shop.oreilly.com/product/0636920018056.do) as the koans were created to accompany this book, however if you don't have it (or we're still finishing it!) then the koans should still stand on their own and provide a great learning experience.
+
+Contributors
+------------
+
+The Spring Koans contributors to date include:
+
+* Russ Miles (CEO of [OpenCredo](http://www.opencredo.com) and Author on [Programming Spring](http://shop.oreilly.com/product/0636920018056.do))
+* Michal Bachman (Consultant at OpenCredo)
 
 Contributing
 ------------
