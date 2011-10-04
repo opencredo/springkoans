@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="emptyBean" class="com.programmingspring.koans.EmptyBean"/>
+
+    <bean id="parentSampleBean" class="com.programmingspring.koans.SampleBean" abstract="true">
+        <property name="beanDependency" ref="emptyBean"/>
+    </bean>
+
+    <bean id="sampleBean1" parent="parentSampleBean">
+        <constructor-arg index="0" value="sampleString1"/>
+    </bean>
+
+    <bean id="sampleBean2" parent="parentSampleBean">
+        <constructor-arg index="0" value="sampleString2"/>
+    </bean>
+
+    <bean id="sampleBean3" parent="parentSampleBean">
+        <constructor-arg index="0" value="sampleString3"/>
+    </bean>
+</beans>

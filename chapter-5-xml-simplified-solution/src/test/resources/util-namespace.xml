@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util" xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd">
+
+    <util:list id="listOfStrings">
+        <value>firstString</value>
+        <value>secondString</value>
+        <value>thirdString</value>
+    </util:list>
+
+
+    <util:list id="listOfIntegers" value-type="java.lang.Integer">
+        <value>123</value>
+        <value>456</value>
+    </util:list>
+
+
+    <bean id="beanWithLists" class="com.programmingspring.koans.BeanWithList">
+        <property name="listOfStrings" ref="listOfStrings"/>
+    </bean>
+
+
+    <bean id="firstBean" class="com.programmingspring.koans.EmptyBean"/>
+
+
+    <util:list id="listOfBeans" list-class="java.util.LinkedList">
+        <ref bean="firstBean" />
+        <bean class="com.programmingspring.koans.EmptyBean" />
+    </util:list>
+
+
+    <util:map id="mapOfBeans" key-type="java.lang.Integer">
+        <entry key="1" value-ref="firstBean" />
+        <entry key="2">
+            <bean class="com.programmingspring.koans.EmptyBean" />
+        </entry>
+    </util:map>
+
+
+    <util:properties id="props" location="sample.properties" />
+
+    <bean id="beanWithProperties" class="com.programmingspring.koans.BeanWithProperties">
+        <property name="properties" ref="props" />
+    </bean>
+
+
+    <bean id="beanWithConstant" class="com.programmingspring.koans.SampleBean">
+        <constructor-arg>
+            <util:constant static-field="com.programmingspring.koans.Constants.CONSTANT_STRING" />
+        </constructor-arg>
+    </bean>
+
+</beans>

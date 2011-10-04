@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="service" class="com.programmingspring.koans.ServiceWithDependency">
+        <property name="repository" ref="repository"/>
+    </bean>
+
+    <beans profile="test">
+        <bean id="repository" class="com.programmingspring.koans.TestRepository"/>
+    </beans>
+
+    <beans profile="production">
+        <bean id="repository" class="com.programmingspring.koans.ProductionRepository"/>
+    </beans>
+
+</beans>

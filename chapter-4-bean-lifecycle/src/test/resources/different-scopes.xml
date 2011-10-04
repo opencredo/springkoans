@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="standardPrototype" class="com.programmingspring.koans.PrototypeBean" scope="prototype"/>
+
+    <bean id="standardSingleton" class="com.programmingspring.koans.SingletonBean">
+        <property name="prototypeBean" ref="standardPrototype"/>
+    </bean>
+
+    <bean id="singletonWithOverriddenLookupMethod" class="com.programmingspring.koans.SingletonBean">
+        <property name="prototypeBean" ref="standardPrototype"/> <!-- change this -->
+    </bean>
+
+</beans>

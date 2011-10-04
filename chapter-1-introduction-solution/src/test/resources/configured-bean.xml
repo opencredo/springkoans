@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="configurableBean" class="com.programmingspring.koans.ConfigurableBean">
+        <property name="someString" value="someStringValue"/>
+        <property name="someInteger" value="362"/>
+        <property name="someCustomType" value="someWrappedString"/>
+        <property name="nonGenericList">
+            <list>
+                <value>someString</value>
+                <ref local="anotherWrappedString"/>
+            </list>
+        </property>
+        <property name="genericList">
+            <list>
+                <value>123</value>
+                <value>456</value>
+            </list>
+        </property>
+        <property name="genericMap">
+            <map>
+                <entry key="someKey" value="789"/>
+            </map>
+        </property>
+        <property name="someProperties">
+            <!-- another option: -->
+            <!--<value>-->
+            <!--someKey=someProperty-->
+            <!--</value>-->
+            <props>
+                <prop key="someKey">someProperty</prop>
+            </props>
+        </property>
+    </bean>
+
+    <bean id="conversionService" class="org.springframework.context.support.ConversionServiceFactoryBean">
+        <property name="converters">
+            <set>
+                <bean class="com.programmingspring.koans.WrappedStringConverter"/>
+            </set>
+        </property>
+    </bean>
+
+    <bean id="anotherWrappedString" class="com.programmingspring.koans.WrappedString">
+        <property name="wrappedString" value="anotherWrappedString"/>
+    </bean>
+
+</beans>

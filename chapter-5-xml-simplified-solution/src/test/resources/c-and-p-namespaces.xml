@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:c="http://www.springframework.org/schema/c"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="emptyBean" class="com.programmingspring.koans.EmptyBean"/>
+
+    <bean id="firstBean" class="com.programmingspring.koans.SampleBean">
+        <constructor-arg value="someValue"/>
+        <property name="beanDependency" ref="emptyBean"/>
+    </bean>
+
+    <bean id="secondBean" class="com.programmingspring.koans.SampleBean" c:stringDependency="someValue">
+        <property name="beanDependency" ref="emptyBean"/>
+    </bean>
+
+    <bean id="thirdBean" class="com.programmingspring.koans.SampleBean" p:beanDependency-ref="emptyBean">
+        <constructor-arg value="someValue"/>
+    </bean>
+
+    <bean id="fourthBean" class="com.programmingspring.koans.SampleBean" c:stringDependency="someValue" p:beanDependency-ref="emptyBean"/>
+
+</beans>

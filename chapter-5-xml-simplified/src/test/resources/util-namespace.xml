@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util" xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd">
+
+    <util:list id="listOfStrings"/>
+
+
+    <util:list id="listOfIntegers">
+        <value>123</value>
+        <value>456</value>
+    </util:list>
+
+
+    <bean id="beanWithLists" class="com.programmingspring.koans.BeanWithList">
+
+    </bean>
+
+
+    <bean id="firstBean" class="com.programmingspring.koans.EmptyBean"/>
+
+
+    <util:list id="listOfBeans">
+
+    </util:list>
+
+
+    <util:map id="mapOfBeans">
+
+    </util:map>
+
+
+    <bean id="beanWithProperties" class="com.programmingspring.koans.BeanWithProperties">
+
+    </bean>
+
+
+    <bean id="beanWithConstant" class="com.programmingspring.koans.SampleBean">
+        <constructor-arg>
+            <value>toBeReplacedByConstant</value>
+        </constructor-arg>
+    </bean>
+
+</beans>
