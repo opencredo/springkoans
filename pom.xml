@@ -18,6 +18,44 @@
         </license>
     </licenses>
 
+	<issueManagement>
+	    <system>JIRA</system>
+	    <url>http://dev.opencredo.com/jira/browse/OCSPRINGKOANS</url>
+	</issueManagement>
+	
+	<inceptionYear>2011</inceptionYear>
+	
+	<developers>
+        <developer>
+         	<id>russmiles</id>
+	         <name>Russ Miles</name>
+	         <email>russ.miles@opencredo.com</email>
+	         <organization>OpenCredo</organization>
+	         <organizationUrl>http://www.opencredo.com</organizationUrl>
+	         <roles>
+	             <role>Project Admin</role>
+	             <role>Developer</role>
+	         </roles>
+	         <timezone>+1</timezone>
+	     </developer>
+		 <developer>
+         	<id>bachmanm</id>
+	         <name>Michal Bachman</name>
+	         <email>michal.bachman@opencredo.com</email>
+	         <organization>OpenCredo</organization>
+	         <organizationUrl>http://www.opencredo.com</organizationUrl>
+	         <roles>
+	             <role>Developer</role>
+	         </roles>
+	         <timezone>+1</timezone>
+	     </developer>
+    </developers>
+   
+    <organization>
+        <name>OpenCredo Spring Koans</name>
+        <url>http://www.opencredo.org/springkoans</url>
+    </organization>
+
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
