@@ -30,7 +30,7 @@
             <!--someKey=someProperty-->
             <!--</value>-->
             <props>
-                <prop key="someKey">someProperty</prop>
+                <prop key="someKey">someValue</prop>
             </props>
         </property>
     </bean>
