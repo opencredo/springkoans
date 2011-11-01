@@ -1,5 +1,7 @@
 package com.programmingspring.koans;
 
+import java.util.Map;
+
 import junit.framework.TestCase;
 
 import org.springframework.beans.factory.support.BeanDefinitionBuilder;
@@ -61,18 +63,47 @@ public class ApplicationContextKoan extends TestCase {
         assertNotNull("Bean retrieved from the ApplicationContext should not be null", 
         		beanRetrievedByType);
     }
+    
+    @SuppressWarnings({ "null", "unused" })
+	public void testKoan6CreateApplicationContextWithTwoQualifyingBeansRetrievedByType() {
+        
+		ApplicationContext applicationContext = 
+        		new ClassPathXmlApplicationContext("two-bean.xml");
 
-    public void testCreateApplicationContextWithOneBeanRetrievingByName() {
-        ApplicationContext applicationContext = new ClassPathXmlApplicationContext("single-bean.xml");
-
-        Repository beanRetrievedByName = (Repository) applicationContext.getBean("sampleBean");
-        assertNotNull("Bean retrieved from the ApplicationContext should not be null", beanRetrievedByName);
+        // Deal with the fact that you may retrieve more than one bean that qualifies...
+        // Use the getBeansOfType(Repository.class) method to retrieve a map of qualifying Spring Beans
+        
+        Map<String, Repository> beansRetrievedByType = null;
+        
+        assertNotNull("Beans retrieved from the ApplicationContext should not be null", 
+        		beansRetrievedByType);
+        
+        assertTrue("Should have two beans of the Repository type in the ApplicationContext", 
+        		beansRetrievedByType.size() == 2);
+        
+        assertNotNull("Should have a bean with an id of sampleBean1", 
+        		beansRetrievedByType.get("sampleBean1"));
+        
+        assertNotNull("Should have a bean with an id of sampleBean2", 
+        		beansRetrievedByType.get("sampleBean2"));
     }
 
-    public void testCreateApplicationContextWithOneBeanRetrievingByNameAndType() {
+    @SuppressWarnings("unused")
+	public void testKoan7CreateApplicationContextWithOneBeanRetrievingByName() {
         ApplicationContext applicationContext = new ClassPathXmlApplicationContext("single-bean.xml");
 
-        Repository beanRetrievedByNameAndType = applicationContext.getBean("sampleBean", Repository.class);
-        assertNotNull("Bean retrieved from the ApplicationContext should not be null", beanRetrievedByNameAndType);
+        // Use the applicationContext's getBean method, specifying the ID as a String
+        Repository beanRetrievedByName = null;
+        assertNotNull("Bean retrieved from the ApplicationContext should not be null", beanRetrievedByName);
+    }
+    
+    @SuppressWarnings("unused")
+	public void testKoan75CreateApplicationContextWithOneBeanRetrievingByName() {
+        ApplicationContext applicationContext = new ClassPathXmlApplicationContext("single-bean-complete.xml");
+
+        // Use the applicationContext's getBean method, specifying the ID as a String AND the Repository class
+        // to avoid having to cast the method's return object to Repository.
+        Repository beanRetrievedByName = null;
+        assertNotNull("Bean retrieved from the ApplicationContext should not be null", beanRetrievedByName);
     }
 }

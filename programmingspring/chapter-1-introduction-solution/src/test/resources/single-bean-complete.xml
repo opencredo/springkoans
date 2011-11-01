@@ -4,7 +4,6 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans 
                            http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-	<!-- You need to declare at least one bean that has a class that implements
-	     the Repository interface -->
+	<bean id="sampleBean" class="com.programmingspring.koans.SampleRepository" />
 	     
 </beans>
