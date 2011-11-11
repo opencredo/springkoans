@@ -4,7 +4,11 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <bean id="service" class="com.programmingspring.koans.ServiceWithDependency">
-
+        <property name="repository" ref="repository"/>
     </bean>
+
+    <bean id="repository" class="com.programmingspring.koans.TestRepository"/>
+
+    <bean id="repository" class="com.programmingspring.koans.ProductionRepository"/>
 
 </beans>
