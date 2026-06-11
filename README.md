@@ -1,6 +1,9 @@
 Spring Koans
 ============
 
+> [!NOTE]
+> This repo has been archived and is no longer under development. OpenCredo is now part of [Trifork](https://github.com/trifork).
+
 These Koans walk you along the path to enlightenment in order to learn Spring. The goal is to learn the Spring Framework's features gradually and engaging your brain as much as possible. At the heart of Spring's usage is effective support for Unit (by Spring getting out of the way) and integration (using Spring's Testing support) testing and so it was natural to provide these koans as a series of failing tests that you learn how to fix as you take a learning journey through the Spring Framework.
 
 With a huge nod to the [EdgeCase Ruby Koans](http://rubykoans.com/) for the inspiration for this project.
